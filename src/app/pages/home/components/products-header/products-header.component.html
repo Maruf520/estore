@@ -1,35 +1,36 @@
 <mat-card class="mb-4">
-    <div class="flex justify-between">
-        <div>
-        <button  mat-button [matMenuTriggerFor]="sortByMenu">
-            Sort By {{sort}}
-            <mat-icon>expand_more</mat-icon>
-        </button>
-        <mat-menu #sortByMenu="matMenu">
-            <button (click)="onSortUpdate('desc')" mat-menu-item>desc</button>
-            <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
-        </mat-menu>
+  <div class="flex justify-between">
+    <div>
+      <button mat-button [matMenuTriggerFor]="sortByMenu">
+        Sort By {{ sort }}
+        <mat-icon>expand_more</mat-icon>
+      </button>
+      <mat-menu #sortByMenu="matMenu">
+        <button (click)="onSortUpdate('desc')" mat-menu-item>desc</button>
+        <button (click)="onSortUpdate('asc')" mat-menu-item>asc</button>
+      </mat-menu>
     </div>
     <div class="flex item-center">
-        <div>
+      <div>
         <button mat-button [matMenuTriggerFor]="menu">
-            Show {{itemsShowCount}}
-            <mat-icon>expand_more</mat-icon>
+          Show {{ itemsShowCount }}
+          <mat-icon>expand_more</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button (click)="onCountUpdate(14)" mat-menu-item>14</button>
-            <button (click)="onCountUpdate(10)" mat-menu-item>10</button>
+          <button (click)="onItemsUpdate(12)" mat-menu-item>12</button>
+          <button (click)="onItemsUpdate(24)" mat-menu-item>24</button>
+          <button (click)="onItemsUpdate(36)" mat-menu-item>36</button>
         </mat-menu>
-    </div>
-    <button (click)="onColumnsUpdated(1)">
+      </div>
+      <button (click)="onColumnsUpdated(1)">
         <mat-icon>view_list</mat-icon>
-    </button>
-    <button>
+      </button>
+      <button>
         <mat-icon (click)="onColumnsUpdated(3)">view_module</mat-icon>
-    </button>
-    <button>
+      </button>
+      <button>
         <mat-icon (click)="onColumnsUpdated(5)">view_comfy</mat-icon>
-    </button>
+      </button>
     </div>
-    </div>
+  </div>
 </mat-card>

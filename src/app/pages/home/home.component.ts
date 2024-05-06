@@ -42,6 +42,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       id: product.id,
     });
   }
+  onItemCountChange(newCount: number): void {
+    this.count = newCount.toString();
+    this.getProducts();
+  }
+  onSortChange(newSort: string): void {
+    this.sort = newSort;
+    this.getProducts();
+  }
   getProducts(): void {
     this.productsSubscription = this.storeService
       .getAllProducts(this.count, this.sort)
