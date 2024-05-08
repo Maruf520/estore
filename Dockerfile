@@ -1,15 +1,15 @@
-FROM node:20 as builder
+FROM node:20-alpine as builder
 
 WORKDIR /app/frontend
 COPY package.json package-lock.json /app/frontend/
+COPY . .
 
 RUN npm install
-COPY . .
 RUN npm run build -- --configuration=production
 
 
 FROM nginx:alpine
-
-COPY --from=builder /app/frontend /usr/share/nginx/html
+COPY /nginx-custom.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/frontend/dist/store /usr/share/nginx/html
 
 EXPOSE  80
