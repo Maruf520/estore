@@ -66,7 +66,7 @@ export class CartComponent implements OnInit {
   }
   onCheckOut(): void {
     this.http
-      .post('http://locahost:4242/checkout', {
+      .post('http://localhost:4242/checkout', {
         items: this.cart.items,
       })
       .subscribe(async (res: any) => {
