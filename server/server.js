@@ -9,7 +9,7 @@ app.use(bodyparser.json());
 app.use(cors({ origin: true, credentials: true }));
 
 const stripe = require('stripe')(
-  'sk_test_51PDfW6BoTMqcqEiey4IJ0llUTo0AjHaN5DuEcQQZrZZO78bciJBvCC2L39MVSlzPixApgy30tYP6vpppX3jly3fu00jMFrIAHL'
+[Put_Your_Api_Key_Here!!!]
 );
 
 app.post('/checkout', async (req, res, next) => {
